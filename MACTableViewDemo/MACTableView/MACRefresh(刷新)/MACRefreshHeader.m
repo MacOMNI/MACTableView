@@ -15,7 +15,7 @@
     
     // 设置普通状态的动画图片
     NSMutableArray *idleImages = [NSMutableArray array];
-    for (NSUInteger i = 1; i<=60; i++) {
+    for (NSUInteger i = 1; i<=10; i++) {
         UIImage *image = [UIImage imageNamed:@"icon_refresh_1"];
         [idleImages addObject:image];
     }
