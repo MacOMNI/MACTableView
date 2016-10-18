@@ -41,11 +41,11 @@ typedef NS_ENUM(NSInteger,MACCanLoadState){
 @property(nonatomic,assign,getter = isShowEmpty)BOOL showEmpty;
 /** MACTableView 加载支持，默认同时支持下拉和加载更多*/
 @property (nonatomic,assign) IBInspectable MACCanLoadState macCanLoadState;
-/**空白页的标题 默认为 “" 为空不显示*/
+/**空白页的标题 默认为 “" 为空,不显示*/
 @property(nonatomic,copy) IBInspectable NSString *emptyTitle;
-/**  空白页的副标题 默认为 “" 为空不显示*/
+/**  空白页的副标题 默认为 “" 为空,不显示*/
 @property(nonatomic,copy) IBInspectable NSString *emptySubtitle;
-/**  空白页展位图名称 默认为 nil，不显示*/
+/**  空白页展位图名称 默认为 nil,不显示*/
 @property(nonatomic,strong) IBInspectable UIImage *emptyImage;
 /**  空白页背景颜色,默认白色*/
 @property(nonatomic,strong) IBInspectable UIColor *emptyColor;

@@ -50,9 +50,8 @@
     
     self.emptyDataSetDelegate           = self;
     self.emptyDataSetSource             = self;
-    
+   // self.hidden                         = YES;
     self.page                           = 0;
-
 }
 -(void)setMacTableViewDelegate:(id<MACTableViewDelegate>)macTableViewDelegate{
     _macTableViewDelegate = macTableViewDelegate;
@@ -67,13 +66,11 @@
                 [self  refreshData];
             }];
             self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-                
-                if (_macTableViewDelegate && [_macTableViewDelegate respondsToSelector:@selector(loadDataRefreshOrPull:)]) {
-                    [_macTableViewDelegate loadDataRefreshOrPull:MACPulling];
-                }
+                [self pullData];
             }];
             self.mj_header.multipleTouchEnabled = NO;
             self.mj_footer.multipleTouchEnabled = NO;
+            self.mj_footer.hidden = YES;
 
         }break;
         case MACCanLoadRefresh:{
@@ -98,12 +95,14 @@
     if ([self.mj_footer isRefreshing])
     [self.mj_footer endRefreshing];
     [self reloadData];
+    [self mac_reloadData];
+
 }
 -(void)noMoreData{
     if ([self.mj_footer isRefreshing])
         [self.mj_footer endRefreshingWithNoMoreData];
 }
--(void)refreshData{
+-(void)refreshData{//下拉刷新
     if (self.mj_footer.state == MJRefreshStateNoMoreData) {
         [self.mj_footer resetNoMoreData];
     }
@@ -112,8 +111,39 @@
         [_macTableViewDelegate loadDataRefreshOrPull:MACRefreshing];
     }
 }
+-(void)pullData{//加载更多
+    if (_macTableViewDelegate && [_macTableViewDelegate respondsToSelector:@selector(loadDataRefreshOrPull:)]) {
+        [_macTableViewDelegate loadDataRefreshOrPull:MACPulling];
+    }
+}
 -(NSNumber *)getCurrentPage{
     return [NSNumber numberWithInteger:++self.page];
+}
+#pragma mark private methods
+
+-(BOOL)isEmptyTableView{//判断当前tableView是否为空
+    BOOL isEmpty = YES;
+    id<UITableViewDataSource> src = self.dataSource;
+    NSInteger sections = 1;
+    if (src && [src respondsToSelector: @selector(numberOfSectionsInTableView:)]) {
+        sections = [src numberOfSectionsInTableView:self];
+    }
+    for (NSInteger i = 0; i < sections; ++i) {
+        NSInteger rows = [src tableView:self numberOfRowsInSection:i];
+        if (rows > 0) {
+            return NO;
+        }
+    }
+    
+    return isEmpty;
+}
+
+-(void)mac_reloadData{
+    if (self.macCanLoadState == MACCanLoadAll && [self isEmptyTableView]) {
+        self.mj_footer.hidden = YES;
+    }else if(self.macCanLoadState == MACCanLoadAll){
+        self.mj_footer.hidden = NO;
+    }
 }
 #pragma mark - DZNEmptyDataSetSource Methods
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView{
@@ -131,7 +161,7 @@
     paragraph.lineBreakMode = NSLineBreakByWordWrapping;
     paragraph.alignment = NSTextAlignmentCenter;
     
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0f],
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:17.0f],
                                  NSForegroundColorAttributeName: [UIColor lightGrayColor],
                                  NSParagraphStyleAttributeName: paragraph};
     
@@ -154,8 +184,11 @@
 
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView{
     
-    if (_firstShowEmpty)  return _firstShowEmpty = NO;
-
+    if (_firstShowEmpty) {
+        _firstShowEmpty = NO;
+        return NO;
+    };
+    
     return YES;
 }
 
