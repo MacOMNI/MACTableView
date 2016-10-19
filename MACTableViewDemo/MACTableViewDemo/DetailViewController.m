@@ -36,11 +36,11 @@
 }
 -(void)initData{
     //[_tableView reloadData];
-    _dataArr = [NSMutableArray new];
+    _dataArr = [NSMutableArray arrayWithArray:@[@"张三",@"李四",@"王五",@"赵六",@"冯七",@"刘八"]];
     _tableView.emptyImage = self.emptyImage;
     _tableView.emptyColor = self.emptyColor;
-   // _tableView.emptyTitle =
-   // _tableView.emptySubtitle
+    _tableView.emptyAtrtibutedTitle = self.emptyTitle;
+    _tableView.emptyAtrtibutedSubtitle = self.descriptionTitle;
     [_tableView beginLoading];
 }
 

@@ -46,9 +46,9 @@ typedef NS_ENUM(NSInteger,MACCanLoadState){
 /**  空白页背景颜色,默认白色*/
 @property(nonatomic,strong) IBInspectable UIColor *emptyColor;
 
-/**空白页的标题 默认为 “" 为空,不显示*/
+/**空白页的标题 默认为 nil ,不显示*/
 @property(nonatomic,copy) IBInspectable NSAttributedString *emptyAtrtibutedTitle;
-/**  空白页的副标题 默认为 “" 为空,不显示*/
+/**  空白页的副标题 默认为 nil,不显示*/
 @property(nonatomic,copy) IBInspectable NSAttributedString *emptyAtrtibutedSubtitle;
 
 /** 获取当下访问接口Page下标 默认从1开始 以来代替控制器计算Page*/

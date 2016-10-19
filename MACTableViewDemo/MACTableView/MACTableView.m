@@ -21,6 +21,12 @@
 @implementation MACTableView
 
 
+//-(instancetype)init{
+//    if (self = [super init]) {
+//        [self initUI];
+//    }
+//    return self;
+//}
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
     if (self=[super initWithCoder:aDecoder]) {
         [self initUI];
@@ -51,6 +57,8 @@
     self.macCanLoadState                = MACCanLoadAll;
     self.emptyTitle                     = @"咋没数据呢,刷新试试~~";
     self.emptySubtitle                  = @"您的数据被程序猿搬走咯~~";
+    self.emptyAtrtibutedTitle           = nil;
+    self.emptyAtrtibutedSubtitle        = nil;
     self.emptyImage                     = nil;
     self.emptyColor                     = [UIColor whiteColor];
     
@@ -162,6 +170,9 @@
 
 #pragma mark - DZNEmptyDataSetSource Methods
 - (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView{
+    if (self.emptyAtrtibutedTitle) {
+        return self.emptyAtrtibutedTitle;
+    }
     NSString *text =self.emptyTitle;
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
@@ -170,6 +181,9 @@
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
 - (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView{
+    if (self.emptyAtrtibutedSubtitle) {
+        return self.emptyAtrtibutedSubtitle;
+    }
     NSString *text = self.emptySubtitle;
     
     NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
