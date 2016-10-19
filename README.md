@@ -7,7 +7,7 @@
 ![GIF 2](https://github.com/azheng51714/MACTableView/blob/master/Photos/hmD0r7fU0J.gif);
 ![GIF 3](https://github.com/azheng51714/MACTableView/blob/master/Photos/MACTableView.png);
 ### Features
-* 支持 多种多种空白样式：包括是否主标题、副标题、空白页图片以及是否支持上拉下拉代理事件等；
+* 支持 多种多种空白样式：包括是否显示主标题、副标题、空白图以及是否支持上拉下拉代理事件等；
 * 基于 MJRefresh & DZNEmptyDataSet 集成设计；
 * 支持 Storyboard & Xib;
 * 支持 iOS 6 及以上;
