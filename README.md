@@ -39,7 +39,7 @@
     self.tableView.macTableViewDelegate = self;
 }
 ```
-* Second Step 设置 MACTableView 并开始加载；
+* Second Step 设置 MACTableView属性 并开始加载；
 
 ```objc
 -(void)setUp{
