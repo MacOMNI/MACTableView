@@ -15,7 +15,7 @@
 
 ## Installation
 
-* 暂未支持 cocopods
+* 暂未支持 cocoapod
 
 ### Import
 导入相关头文件
