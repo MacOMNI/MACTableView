@@ -24,25 +24,32 @@
 }
 -(void)initUI{
     _tableView.macTableViewDelegate = self;
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
 }
 -(void)initData{
     //[_tableView reloadData];
-    _dataArr = [NSMutableArray arrayWithArray:@[@"张三",@"李四",@"王五",@"赵六",@"冯七",@"刘八"]];
+    _dataArr = [NSMutableArray new];
     [_tableView beginLoading];
 }
 #pragma mark macTableViewDelegate
 -(void)loadDataRefreshOrPull:(MACRefreshState)state{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-          [_tableView endLoading];
+        if (_dataArr.count) {
+            [_dataArr removeAllObjects];
+        }else _dataArr = [NSMutableArray arrayWithArray:@[@"张三",@"李四",@"王五",@"赵六",@"冯七",@"刘八"]];
+       
+        [_tableView endLoading];
+        
     });
 }
 #pragma  mark tableView
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 0;
+    return 1;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;// _dataArr.count;
+    return _dataArr.count;// _dataArr.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];

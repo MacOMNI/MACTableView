@@ -112,8 +112,9 @@
         
         // 恢复inset和offset
         [UIView animateWithDuration:MJRefreshSlowAnimationDuration animations:^{
-            self.scrollView.mj_insetT += self.insetTDelta;
             
+            self.scrollView.mj_insetT += self.insetTDelta;
+            NSLog(@"mj_insertTop = %lf",self.scrollView.mj_insetT);
             // 自动调整透明度
             if (self.isAutomaticallyChangeAlpha) self.alpha = 0.0;
         } completion:^(BOOL finished) {
@@ -129,6 +130,8 @@
                 CGFloat top = self.scrollViewOriginalInset.top + self.mj_h;
                 // 增加滚动区域top
                 self.scrollView.mj_insetT = top;
+                NSLog(@"增加滚动区域top = %lf",self.scrollView.mj_insetT);
+
                 // 设置滚动位置
                 [self.scrollView setContentOffset:CGPointMake(0, -top) animated:NO];
             } completion:^(BOOL finished) {
