@@ -3,8 +3,9 @@
 
 对 UITableView 空白页文字提示、空白页图片、上拉下拉事件等进行了高度封装，使用简单高效，并命名为MACTableView。
 
-
-
+！[GIF 1](https://github.com/azheng51714/MACTableView/blob/master/Photos/fvyO81OO7L.gif);
+！[GIF 2](https://github.com/azheng51714/MACTableView/blob/master/Photos/hmD0r7fU0J.gif);
+！[GIF 3](https://github.com/azheng51714/MACTableView/blob/master/Photos/MACTableView.png);
 ### Features
 * 支持 多种多种空白样式：包括是否主标题、副标题、空白页图片以及是否支持上拉下拉代理事件等；
 * 基于 MJRefresh & DZNEmptyDataSet 集成设计；
