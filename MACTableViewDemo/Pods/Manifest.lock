@@ -1,13 +1,16 @@
 PODS:
   - DZNEmptyDataSet (1.7.3)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
 
 DEPENDENCIES:
   - DZNEmptyDataSet (~> 1.7.2)
+  - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.0)
 
 SPEC CHECKSUMS:
   DZNEmptyDataSet: dd7cca17c1d07dfa78956859b1e70a52505678ef
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
 
 COCOAPODS: 0.39.0

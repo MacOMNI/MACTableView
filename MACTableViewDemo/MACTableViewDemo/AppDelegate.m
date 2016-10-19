@@ -16,6 +16,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+   // UILabel
     // Override point for customization after application launch.
     self.window                            = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     MainViewController *rootViewController = [[MainViewController alloc] init];

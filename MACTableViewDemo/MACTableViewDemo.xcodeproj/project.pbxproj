@@ -18,6 +18,11 @@
 		5A5828021DB4F0B800E00058 /* icon_refresh_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5827F81DB4F0B800E00058 /* icon_refresh_3@3x.png */; };
 		5A5828031DB4F0B800E00058 /* MACRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5827FA1DB4F0B800E00058 /* MACRefreshHeader.m */; };
 		5A5828041DB4F0B800E00058 /* MACTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5827FC1DB4F0B800E00058 /* MACTableView.m */; };
+		5A7B8A821DB7552600C70F6E /* UIColor+Hexadecimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A811DB7552600C70F6E /* UIColor+Hexadecimal.m */; };
+		5A7B8A841DB75FEF00C70F6E /* applications.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A7B8A831DB75FEF00C70F6E /* applications.json */; };
+		5A7B8A871DB761D900C70F6E /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A861DB761D900C70F6E /* DetailModel.m */; };
+		5A7B8A8A1DB7648500C70F6E /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A891DB7648500C70F6E /* Application.m */; };
+		5A7B8A8D1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A8C1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m */; };
 		5AB468661DB5B01800CB367B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB468641DB5B01800CB367B /* MainViewController.m */; };
 		5AB468671DB5B01800CB367B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB468651DB5B01800CB367B /* MainViewController.xib */; };
 		5AB4686B1DB5B81200CB367B /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB468691DB5B81200CB367B /* MainViewCell.m */; };
@@ -46,6 +51,15 @@
 		5A5827FA1DB4F0B800E00058 /* MACRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACRefreshHeader.m; sourceTree = "<group>"; };
 		5A5827FB1DB4F0B800E00058 /* MACTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACTableView.h; sourceTree = "<group>"; };
 		5A5827FC1DB4F0B800E00058 /* MACTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACTableView.m; sourceTree = "<group>"; };
+		5A7B8A801DB7552600C70F6E /* UIColor+Hexadecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hexadecimal.h"; sourceTree = "<group>"; };
+		5A7B8A811DB7552600C70F6E /* UIColor+Hexadecimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hexadecimal.m"; sourceTree = "<group>"; };
+		5A7B8A831DB75FEF00C70F6E /* applications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = applications.json; sourceTree = "<group>"; };
+		5A7B8A851DB761D900C70F6E /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
+		5A7B8A861DB761D900C70F6E /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
+		5A7B8A881DB7648500C70F6E /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		5A7B8A891DB7648500C70F6E /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
+		5A7B8A8B1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonItemTitle.h"; sourceTree = "<group>"; };
+		5A7B8A8C1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonItemTitle.m"; sourceTree = "<group>"; };
 		5AB468631DB5B01800CB367B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		5AB468641DB5B01800CB367B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		5AB468651DB5B01800CB367B /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -115,8 +129,17 @@
 				5AB4686D1DB5BADE00CB367B /* DetailViewController.h */,
 				5AB4686E1DB5BADE00CB367B /* DetailViewController.m */,
 				5AB4686F1DB5BADE00CB367B /* DetailViewController.xib */,
+				5A7B8A881DB7648500C70F6E /* Application.h */,
+				5A7B8A891DB7648500C70F6E /* Application.m */,
+				5A7B8A8B1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.h */,
+				5A7B8A8C1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m */,
+				5A7B8A801DB7552600C70F6E /* UIColor+Hexadecimal.h */,
+				5A7B8A811DB7552600C70F6E /* UIColor+Hexadecimal.m */,
+				5A7B8A831DB75FEF00C70F6E /* applications.json */,
 				5A5827EB1DB4EF3A00E00058 /* Info.plist */,
 				5A5827DA1DB4EF3A00E00058 /* Supporting Files */,
+				5A7B8A851DB761D900C70F6E /* DetailModel.h */,
+				5A7B8A861DB761D900C70F6E /* DetailModel.m */,
 			);
 			path = MACTableViewDemo;
 			sourceTree = "<group>";
@@ -227,6 +250,7 @@
 				5A5827E71DB4EF3A00E00058 /* Assets.xcassets in Resources */,
 				5A5828021DB4F0B800E00058 /* icon_refresh_3@3x.png in Resources */,
 				5AB468671DB5B01800CB367B /* MainViewController.xib in Resources */,
+				5A7B8A841DB75FEF00C70F6E /* applications.json in Resources */,
 				5AB4686C1DB5B81200CB367B /* MainViewCell.xib in Resources */,
 				5AB468731DB5C5EC00CB367B /* Main.storyboard in Resources */,
 				5A5828011DB4F0B800E00058 /* icon_refresh_3@2x.png in Resources */,
@@ -297,8 +321,12 @@
 				5A5828031DB4F0B800E00058 /* MACRefreshHeader.m in Sources */,
 				5AB4686B1DB5B81200CB367B /* MainViewCell.m in Sources */,
 				5AB468661DB5B01800CB367B /* MainViewController.m in Sources */,
+				5A7B8A821DB7552600C70F6E /* UIColor+Hexadecimal.m in Sources */,
 				5A5827DC1DB4EF3A00E00058 /* main.m in Sources */,
 				5AB468701DB5BADE00CB367B /* DetailViewController.m in Sources */,
+				5A7B8A8D1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m in Sources */,
+				5A7B8A8A1DB7648500C70F6E /* Application.m in Sources */,
+				5A7B8A871DB761D900C70F6E /* DetailModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

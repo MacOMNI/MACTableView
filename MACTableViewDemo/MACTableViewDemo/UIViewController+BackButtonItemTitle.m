@@ -1,0 +1,41 @@
+//
+//  UIViewController+BackButtonItemTitle.m
+//
+
+#import "UIViewController+BackButtonItemTitle.h"
+
+@implementation UIViewController (BackButtonItemTitle)
+
+@end
+
+@implementation UINavigationController (NavigationItemBackBtnTile)
+
+- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item {
+    
+    UIViewController * viewController = self.viewControllers.count >1 ? [self.viewControllers objectAtIndex:self.viewControllers.count - 2] : (self.viewControllers.count==1?[self.viewControllers objectAtIndex:0]:nil);
+    
+    if (!viewController) {
+        return YES;
+    }
+    
+    NSString *backButtonTitle = @"";
+    if ([viewController respondsToSelector:@selector(navigationItemBackBarButtonTitle)]) {
+        backButtonTitle = [viewController navigationItemBackBarButtonTitle];
+    }
+    
+    if (!backButtonTitle) {
+        backButtonTitle = viewController.title;
+    }
+    
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithTitle:backButtonTitle
+                                                                       style:UIBarButtonItemStylePlain
+                                                                      target:nil action:nil];
+    
+    viewController.navigationItem.backBarButtonItem = backButtonItem;
+    [viewController.navigationController.navigationBar  setBackIndicatorImage:[UIImage imageNamed:@"nav_leftBarImage_icon"]];
+    [viewController.navigationController.navigationBar setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"nav_leftBarImage_icon"]];
+    //[viewController.navigationItem.backBarButtonItem setImage:[UIImage imageNamed:@"nav_leftBarImage_icon"]];
+    return YES;
+}
+
+@end

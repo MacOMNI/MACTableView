@@ -8,20 +8,16 @@
 
 #import <UIKit/UIKit.h>
 typedef NS_ENUM(NSInteger, MACRefreshState) {
-
-    /** 下拉刷新的状态 */
-    MACRefreshing,
-    /** pull 加载更多刷新中的状态 */
-    MACPulling,
+    
+    MACRefreshing = 0, /** 下拉刷新的状态 */
+    MACPulling,        /** pull 加载更多刷新中的状态 */
 };
 
 typedef NS_ENUM(NSInteger,MACCanLoadState){
-    /**不支持下拉和加载更多*/
-    MACCanLoadNone,
-    /**只支持下拉刷新*/
-    MACCanLoadRefresh,
-    /** 同时支持下拉和加载更多*/
-    MACCanLoadAll,
+    
+    MACCanLoadNone = 0,/**不支持下拉和加载更多*/
+    MACCanLoadRefresh, /**只支持下拉刷新*/
+    MACCanLoadAll,     /** 同时支持下拉和加载更多*/
 };
 
 @protocol MACTableViewDelegate <NSObject>
@@ -33,7 +29,7 @@ typedef NS_ENUM(NSInteger,MACCanLoadState){
 
 @end
 
-@interface MACTableView : UITableView
+@interface MACTableView : UITableView<NSCoding>
 
 @property (nonatomic,weak) id<MACTableViewDelegate> macTableViewDelegate;//MACTableView delegate
 
@@ -49,6 +45,11 @@ typedef NS_ENUM(NSInteger,MACCanLoadState){
 @property(nonatomic,strong) IBInspectable UIImage *emptyImage;
 /**  空白页背景颜色,默认白色*/
 @property(nonatomic,strong) IBInspectable UIColor *emptyColor;
+
+/**空白页的标题 默认为 “" 为空,不显示*/
+@property(nonatomic,copy) IBInspectable NSAttributedString *emptyAtrtibutedTitle;
+/**  空白页的副标题 默认为 “" 为空,不显示*/
+@property(nonatomic,copy) IBInspectable NSAttributedString *emptyAtrtibutedSubtitle;
 
 /** 获取当下访问接口Page下标 默认从1开始 以来代替控制器计算Page*/
 -(NSNumber *)getCurrentPage;

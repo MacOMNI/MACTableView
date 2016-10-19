@@ -21,11 +21,11 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="emptyTitle" value="暂无数据"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="emptySubtitle" value="刷新试试~~"/>
                         <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
                             <color key="value" red="0.13725490200000001" green="0.74901960779999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="placeholder_facebook"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="emptySubtitle" value="刷新试试"/>
                     </userDefinedRuntimeAttributes>
                 </tableView>
             </subviews>

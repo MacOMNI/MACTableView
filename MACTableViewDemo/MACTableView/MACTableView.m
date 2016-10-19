@@ -182,13 +182,30 @@
     
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
-
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
+    return nil;
+//    NSString *text = nil;
+//    UIFont *font = nil;
+//    UIColor *textColor = nil;
+//    text = @"点击界面重新加载";
+//    font = [UIFont boldSystemFontOfSize:16.0];
+//    textColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+//    NSMutableDictionary *attributes = [NSMutableDictionary new];
+//    if (font) [attributes setObject:font forKey:NSFontAttributeName];
+//    if (textColor) [attributes setObject:textColor forKey:NSForegroundColorAttributeName];
+//
+//    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+- (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
+    return nil;
+}
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
     return self.emptyImage;
 }
 - (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView{
     return self.emptyColor;
 }
+
 - (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
     return -20.0f;
 }
