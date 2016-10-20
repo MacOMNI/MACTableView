@@ -10,12 +10,12 @@
 		5A5827DC1DB4EF3A00E00058 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5827DB1DB4EF3A00E00058 /* main.m */; };
 		5A5827DF1DB4EF3A00E00058 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5827DE1DB4EF3A00E00058 /* AppDelegate.m */; };
 		5A5827E71DB4EF3A00E00058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5827E61DB4EF3A00E00058 /* Assets.xcassets */; };
-		5A5828041DB4F0B800E00058 /* MACTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5827FC1DB4F0B800E00058 /* MACTableView.m */; };
 		5A7B8A821DB7552600C70F6E /* UIColor+Hexadecimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A811DB7552600C70F6E /* UIColor+Hexadecimal.m */; };
 		5A7B8A841DB75FEF00C70F6E /* applications.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A7B8A831DB75FEF00C70F6E /* applications.json */; };
 		5A7B8A871DB761D900C70F6E /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A861DB761D900C70F6E /* DetailModel.m */; };
 		5A7B8A8A1DB7648500C70F6E /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A891DB7648500C70F6E /* Application.m */; };
 		5A7B8A8D1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A8C1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m */; };
+		5A8217F91DB86A1700DA9011 /* MACTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8217F81DB86A1700DA9011 /* MACTableView.m */; };
 		5AB468661DB5B01800CB367B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB468641DB5B01800CB367B /* MainViewController.m */; };
 		5AB468671DB5B01800CB367B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB468651DB5B01800CB367B /* MainViewController.xib */; };
 		5AB4686B1DB5B81200CB367B /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB468691DB5B81200CB367B /* MainViewCell.m */; };
@@ -34,8 +34,6 @@
 		5A5827DE1DB4EF3A00E00058 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5A5827E61DB4EF3A00E00058 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MACTableViewDemo/Assets.xcassets; sourceTree = "<group>"; };
 		5A5827EB1DB4EF3A00E00058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A5827FB1DB4F0B800E00058 /* MACTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACTableView.h; sourceTree = "<group>"; };
-		5A5827FC1DB4F0B800E00058 /* MACTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACTableView.m; sourceTree = "<group>"; };
 		5A7B8A801DB7552600C70F6E /* UIColor+Hexadecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hexadecimal.h"; sourceTree = "<group>"; };
 		5A7B8A811DB7552600C70F6E /* UIColor+Hexadecimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hexadecimal.m"; sourceTree = "<group>"; };
 		5A7B8A831DB75FEF00C70F6E /* applications.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = applications.json; sourceTree = "<group>"; };
@@ -45,6 +43,8 @@
 		5A7B8A891DB7648500C70F6E /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 		5A7B8A8B1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonItemTitle.h"; sourceTree = "<group>"; };
 		5A7B8A8C1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonItemTitle.m"; sourceTree = "<group>"; };
+		5A8217F71DB86A1700DA9011 /* MACTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACTableView.h; sourceTree = "<group>"; };
+		5A8217F81DB86A1700DA9011 /* MACTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACTableView.m; sourceTree = "<group>"; };
 		5AB468631DB5B01800CB367B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		5AB468641DB5B01800CB367B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		5AB468651DB5B01800CB367B /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -83,9 +83,9 @@
 		5A5827CE1DB4EF3A00E00058 = {
 			isa = PBXGroup;
 			children = (
+				5A8217F61DB86A1700DA9011 /* MACTableView */,
 				5A5827E61DB4EF3A00E00058 /* Assets.xcassets */,
 				5A5827D91DB4EF3A00E00058 /* MACTableViewDemo */,
-				5A5827F11DB4F0B800E00058 /* MACTableView */,
 				5A5827D81DB4EF3A00E00058 /* Products */,
 				03ACE47100BB9A3050046320 /* Pods */,
 				A33CD2BE3EBD2F795CA34BAF /* Frameworks */,
@@ -138,13 +138,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5A5827F11DB4F0B800E00058 /* MACTableView */ = {
+		5A8217F61DB86A1700DA9011 /* MACTableView */ = {
 			isa = PBXGroup;
 			children = (
-				5A5827FB1DB4F0B800E00058 /* MACTableView.h */,
-				5A5827FC1DB4F0B800E00058 /* MACTableView.m */,
+				5A8217F71DB86A1700DA9011 /* MACTableView.h */,
+				5A8217F81DB86A1700DA9011 /* MACTableView.m */,
 			);
-			path = MACTableView;
+			name = MACTableView;
+			path = ../MACTableView;
 			sourceTree = "<group>";
 		};
 		A33CD2BE3EBD2F795CA34BAF /* Frameworks */ = {
@@ -279,8 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A5828041DB4F0B800E00058 /* MACTableView.m in Sources */,
 				5A5827DF1DB4EF3A00E00058 /* AppDelegate.m in Sources */,
+				5A8217F91DB86A1700DA9011 /* MACTableView.m in Sources */,
 				5AB4686B1DB5B81200CB367B /* MainViewCell.m in Sources */,
 				5AB468661DB5B01800CB367B /* MainViewController.m in Sources */,
 				5A7B8A821DB7552600C70F6E /* UIColor+Hexadecimal.m in Sources */,

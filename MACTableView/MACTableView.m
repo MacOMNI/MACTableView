@@ -1,201 +1,250 @@
 //
 //  MACTableView.m
-//  WeSchoolTeacher
-//
+//  MACTableView
+//  https://github.com/azheng51714/MACTableView
 //  Created by MacKun on 16/3/1.
-//  Copyright © 2016年 solloun. All rights reserved.
+//  Copyright © 2016年 MacKun All rights reserved.
 //
+
 
 #import "MACTableView.h"
-#import "MACRefreshHeader.h"
+#import "MJRefresh.h"
 #import "MJRefreshAutoFooter.h"
+#import "UIScrollView+EmptyDataSet.h"
 
-@interface MACTableView()
-/**
- *  是否第一次加载就展示空白页 默认为YES
- */
-@property(nonatomic,assign)BOOL firstShowEmpty;
 
+@interface MACTableView()<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+
+/**  当前访问的page 下标*/
+@property (nonatomic,assign) NSInteger page;
 @end
-
 
 @implementation MACTableView
 
 
+//-(instancetype)init{
+//    if (self = [super init]) {
+//        [self initUI];
+//    }
+//    return self;
+//}
 -(instancetype)initWithCoder:(NSCoder *)aDecoder{
-    self=[super initWithCoder:aDecoder];
-    if (self) {
+    if (self=[super initWithCoder:aDecoder]) {
         [self initUI];
     }
+    
     return self;
 }
 -(instancetype)initWithFrame:(CGRect)frame{
-    self =[super initWithFrame:frame];
-    if (self) {
+    if (self = [super initWithFrame:frame]) {
         [self initUI];
-        self.firstShowEmpty=NO;
     }
+    
+    return self;
+}
+-(instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
+    if (self =[super initWithFrame:frame style:style]) {
+        [self initUI];
+    }
+    
     return self;
 }
 -(void)initUI{
+    //self.tableHeaderView                = [UIView new];
     self.tableFooterView                = [UIView new];
-    self.titleForEmpty                  = @"咋没数据呢,刷新试试~~";
-    self.descriptionForEmpty            = @"您的数据被程序猿搬走咯~~";
-    self.imageNameForEmpty              = @"placeholder_dropbox";
-    self.firstShowEmpty                 = YES;
-    self.isRefresh                      = YES;
-    self.isLoadMore                     = YES;
-    self.isShowEmpty                    = YES;
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator   = NO;
-   // self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.macCanLoadState                = MACCanLoadAll;
+    self.emptyTitle                     = @"咋没数据呢,刷新试试~~";
+    self.emptySubtitle                  = @"您的数据被程序猿搬走咯~~";
+    self.emptyAtrtibutedTitle           = nil;
+    self.emptyAtrtibutedSubtitle        = nil;
+    self.emptyImage                     = nil;
+    self.emptyColor                     = [UIColor whiteColor];
+    
+    self.showEmpty                      = YES;
+    
+    
     self.page                           = 0;
 }
+#pragma  mark public methods
 -(void)setMacTableViewDelegate:(id<MACTableViewDelegate>)macTableViewDelegate{
     _macTableViewDelegate = macTableViewDelegate;
     self.dataSource       = (id<UITableViewDataSource>)macTableViewDelegate;
     self.delegate         = (id<UITableViewDelegate>)macTableViewDelegate;
 }
--(void)setIsRefresh:(BOOL)isRefresh{
-    _isRefresh = isRefresh;
-    if (isRefresh) {
-        // header
-        [self  setMj_header:
-         [MACRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)]];
-        [self.mj_header setMultipleTouchEnabled:NO];
-    }else{
-        [self setMj_header:nil];
-    }
-}
--(void)setIsShowEmpty:(BOOL)isShowEmpty{
-    _isShowEmpty=isShowEmpty;
-    if (isShowEmpty) {
-        self.emptyDataSetDelegate=self;
-        self.emptyDataSetSource=self;
-    }
-//    } else{
-//        self.emptyDataSetDelegate=nil;
-//        self.emptyDataSetSource=nil;
-//    }
-}
--(void)setIsLoadMore:(BOOL)isLoadMore{
-    _isLoadMore=isLoadMore;
-    if (isLoadMore) {
-        if (self.mj_footer==nil) {
-            [self setMj_footer:[MJRefreshAutoNormalFooter
-                                footerWithRefreshingBlock:^{
-                                    // 加载下一页在这
-                                    [self showWaiting];
-                                    
-                                    if (_macTableViewDelegate && [_macTableViewDelegate respondsToSelector:@selector(loadDataRefreshOrPull:)]) {
-//                                        if (self.mj_footer.state==MJRefreshStateIdle) {
-//                                            return ;
-//                                        }
-                                      //  MJRefreshState state=self.mj_footer.state;
-                                        [_macTableViewDelegate loadDataRefreshOrPull:MACPulling];
-                                    }
-                                    
-                                }]
-             ];
-        }
-        [self.mj_footer setMultipleTouchEnabled:NO];
-    }else{
-        [self setMj_footer:nil];
+-(void)setMacCanLoadState:(MACCanLoadState)macCanLoadState{
+    _macCanLoadState = macCanLoadState;
+    switch (_macCanLoadState) {
+        case MACCanLoadAll:{
+            self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+                [self  refreshData];
+            }];
+            self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+                [self pullData];
+            }];
+            self.mj_header.multipleTouchEnabled = NO;
+            self.mj_footer.multipleTouchEnabled = NO;
+            self.mj_footer.hidden = YES;
+            
+        }break;
+        case MACCanLoadRefresh:{
+            self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+                [self refreshData];
+            }];
+            self.mj_header.multipleTouchEnabled = NO;
+            self.mj_footer = nil;
+        }break;
+        case MACCanLoadNone:{
+            self.mj_header = nil;
+            self.mj_footer = nil;
+        }break;
     }
 }
 -(void)beginLoading{
-    [self.mj_header beginRefreshing];
+    //[self.mj_header beginRefreshing];
+    [self.mj_header beginRefreshingWithCompletionBlock:^{
+        self.emptyDataSetDelegate = self;
+        self.emptyDataSetSource   = self;
+        
+    }];
 }
 -(void)endLoading{
-    [self hideHUD];
-    if([self.mj_header isRefreshing])
-    [self.mj_header endRefreshing];
+    if([self.mj_header isRefreshing]){
+        [self.mj_header endRefreshingWithCompletionBlock:^{
+            [self mac_reloadData];
+        }];
+    }
     if ([self.mj_footer isRefreshing])
-    [self.mj_footer endRefreshing];
+        [self.mj_footer endRefreshingWithCompletionBlock:^{
+            [self mac_reloadData];
+        }];
 }
-//-(void)noMoreData{
-//    [self showWaiting];
-//    if ([self.mj_footer isRefreshing])
-//        [self.mj_footer endRefreshingWithNoMoreData];
-//}
--(void)refreshData{
-    [self showWaiting];
-    if (self.mj_footer.state==MJRefreshStateNoMoreData) {
-        [self.mj_footer resetNoMoreData];
-    }
-    if (_macTableViewDelegate && [_macTableViewDelegate respondsToSelector:@selector(loadDataRefreshOrPull:)]) {
-        self.page=0;
-        [_macTableViewDelegate loadDataRefreshOrPull:MACRefreshing];
-    }
+-(void)noMoreData{
+    if ([self.mj_footer isRefreshing])
+        [self.mj_footer endRefreshingWithNoMoreData];
 }
 -(NSNumber *)getCurrentPage{
     return [NSNumber numberWithInteger:++self.page];
 }
+#pragma mark private methods
+
+-(BOOL)isEmptyTableView{//判断当前tableView是否为空
+    id<UITableViewDataSource> src = self.dataSource;
+    NSInteger sections = 1;
+    if (src && [src respondsToSelector: @selector(numberOfSectionsInTableView:)]) {
+        sections = [src numberOfSectionsInTableView:self];
+    }
+    for (NSInteger i = 0; i < sections; ++i) {
+        NSInteger rows = [src tableView:self numberOfRowsInSection:i];
+        if (rows > 0) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
+-(void)mac_reloadData{
+    [self reloadData];
+    if (self.macCanLoadState == MACCanLoadAll && [self isEmptyTableView]) {
+        self.mj_footer.hidden = YES;
+    }else if(self.macCanLoadState == MACCanLoadAll){
+        self.mj_footer.hidden = NO;
+    }
+}
+-(void)refreshData{//下拉刷新
+    if (self.mj_footer.state == MJRefreshStateNoMoreData) {
+        [self.mj_footer resetNoMoreData];
+    }
+    if (_macTableViewDelegate && [_macTableViewDelegate respondsToSelector:@selector(loadDataRefreshOrPull:)]) {
+        self.page = 0;
+        [_macTableViewDelegate loadDataRefreshOrPull:MACRefreshing];
+    }
+}
+-(void)pullData{//加载更多
+    if (_macTableViewDelegate && [_macTableViewDelegate respondsToSelector:@selector(loadDataRefreshOrPull:)]) {
+        [_macTableViewDelegate loadDataRefreshOrPull:MACPulling];
+    }
+}
+
 #pragma mark - DZNEmptyDataSetSource Methods
-- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
-{
-    NSString *text =self.titleForEmpty;
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView{
+    if (self.emptyAtrtibutedTitle) {
+        return self.emptyAtrtibutedTitle;
+    }
+    NSString *text =self.emptyTitle;
     
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
                                  NSForegroundColorAttributeName: [UIColor darkGrayColor]};
     
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
-- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
-{
-    NSString *text = self.descriptionForEmpty;
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView{
+    if (self.emptyAtrtibutedSubtitle) {
+        return self.emptyAtrtibutedSubtitle;
+    }
+    NSString *text = self.emptySubtitle;
     
     NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
     paragraph.lineBreakMode = NSLineBreakByWordWrapping;
     paragraph.alignment = NSTextAlignmentCenter;
     
-    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0f],
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:17.0f],
                                  NSForegroundColorAttributeName: [UIColor lightGrayColor],
                                  NSParagraphStyleAttributeName: paragraph};
     
     return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
-- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
-{
-    if (!self.imageNameForEmpty||[self.imageNameForEmpty isBlank]) {
-        return nil;
-    }
-    return [UIImage imageNamed:self.imageNameForEmpty];
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
+    return nil;
+    //    NSString *text = nil;
+    //    UIFont *font = nil;
+    //    UIColor *textColor = nil;
+    //    text = @"点击界面重新加载";
+    //    font = [UIFont boldSystemFontOfSize:16.0];
+    //    textColor = [[UIColor blueColor] colorWithAlphaComponent:0.7];
+    //    NSMutableDictionary *attributes = [NSMutableDictionary new];
+    //    if (font) [attributes setObject:font forKey:NSFontAttributeName];
+    //    if (textColor) [attributes setObject:textColor forKey:NSForegroundColorAttributeName];
+    //
+    //    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
 }
-- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView
-{
-    return [UIColor whiteColor];
+- (UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state{
+    return nil;
 }
-- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView
-{
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView{
+    return self.emptyImage;
+}
+- (UIColor *)backgroundColorForEmptyDataSet:(UIScrollView *)scrollView{
+    return self.emptyColor;
+}
+
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView{
     return -20.0f;
 }
-- (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView
-{
+
+- (CGFloat)spaceHeightForEmptyDataSet:(UIScrollView *)scrollView{
     return 0.0f;
 }
 #pragma mark - DZNEmptyDataSetDelegate Methods
 
-- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView
-{
-    if (self.firstShowEmpty) {
-        self.firstShowEmpty=NO;
-        return NO;
-    }
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView{
     return YES;
 }
 
-- (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView
-{
+- (BOOL)emptyDataSetShouldAllowTouch:(UIScrollView *)scrollView{
     return YES;
 }
 
-- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView
-{
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView{
     return YES;
 }
-- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView
-{
+
+
+
+- (CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView{
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath: @"transform"];
     
     animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
