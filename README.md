@@ -15,7 +15,10 @@
 
 ## Installation
 
-* 暂未支持 cocoapod
+### cocoapods
+```ruby
+ pod 'MACTableView', '~> 1.0.0'
+```
 
 ### Import
 导入相关头文件
