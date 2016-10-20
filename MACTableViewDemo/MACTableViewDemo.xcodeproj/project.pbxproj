@@ -10,13 +10,6 @@
 		5A5827DC1DB4EF3A00E00058 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5827DB1DB4EF3A00E00058 /* main.m */; };
 		5A5827DF1DB4EF3A00E00058 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5827DE1DB4EF3A00E00058 /* AppDelegate.m */; };
 		5A5827E71DB4EF3A00E00058 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A5827E61DB4EF3A00E00058 /* Assets.xcassets */; };
-		5A5827FD1DB4F0B800E00058 /* icon_refresh_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5827F31DB4F0B800E00058 /* icon_refresh_1@2x.png */; };
-		5A5827FE1DB4F0B800E00058 /* icon_refresh_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5827F41DB4F0B800E00058 /* icon_refresh_1@3x.png */; };
-		5A5827FF1DB4F0B800E00058 /* icon_refresh_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5827F51DB4F0B800E00058 /* icon_refresh_2@2x.png */; };
-		5A5828001DB4F0B800E00058 /* icon_refresh_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5827F61DB4F0B800E00058 /* icon_refresh_2@3x.png */; };
-		5A5828011DB4F0B800E00058 /* icon_refresh_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5827F71DB4F0B800E00058 /* icon_refresh_3@2x.png */; };
-		5A5828021DB4F0B800E00058 /* icon_refresh_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5827F81DB4F0B800E00058 /* icon_refresh_3@3x.png */; };
-		5A5828031DB4F0B800E00058 /* MACRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5827FA1DB4F0B800E00058 /* MACRefreshHeader.m */; };
 		5A5828041DB4F0B800E00058 /* MACTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5827FC1DB4F0B800E00058 /* MACTableView.m */; };
 		5A7B8A821DB7552600C70F6E /* UIColor+Hexadecimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A811DB7552600C70F6E /* UIColor+Hexadecimal.m */; };
 		5A7B8A841DB75FEF00C70F6E /* applications.json in Resources */ = {isa = PBXBuildFile; fileRef = 5A7B8A831DB75FEF00C70F6E /* applications.json */; };
@@ -41,14 +34,6 @@
 		5A5827DE1DB4EF3A00E00058 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5A5827E61DB4EF3A00E00058 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MACTableViewDemo/Assets.xcassets; sourceTree = "<group>"; };
 		5A5827EB1DB4EF3A00E00058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A5827F31DB4F0B800E00058 /* icon_refresh_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_1@2x.png"; sourceTree = "<group>"; };
-		5A5827F41DB4F0B800E00058 /* icon_refresh_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_1@3x.png"; sourceTree = "<group>"; };
-		5A5827F51DB4F0B800E00058 /* icon_refresh_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_2@2x.png"; sourceTree = "<group>"; };
-		5A5827F61DB4F0B800E00058 /* icon_refresh_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_2@3x.png"; sourceTree = "<group>"; };
-		5A5827F71DB4F0B800E00058 /* icon_refresh_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_3@2x.png"; sourceTree = "<group>"; };
-		5A5827F81DB4F0B800E00058 /* icon_refresh_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_3@3x.png"; sourceTree = "<group>"; };
-		5A5827F91DB4F0B800E00058 /* MACRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACRefreshHeader.h; sourceTree = "<group>"; };
-		5A5827FA1DB4F0B800E00058 /* MACRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACRefreshHeader.m; sourceTree = "<group>"; };
 		5A5827FB1DB4F0B800E00058 /* MACTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACTableView.h; sourceTree = "<group>"; };
 		5A5827FC1DB4F0B800E00058 /* MACTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACTableView.m; sourceTree = "<group>"; };
 		5A7B8A801DB7552600C70F6E /* UIColor+Hexadecimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hexadecimal.h"; sourceTree = "<group>"; };
@@ -156,26 +141,10 @@
 		5A5827F11DB4F0B800E00058 /* MACTableView */ = {
 			isa = PBXGroup;
 			children = (
-				5A5827F21DB4F0B800E00058 /* MACRefresh(刷新) */,
 				5A5827FB1DB4F0B800E00058 /* MACTableView.h */,
 				5A5827FC1DB4F0B800E00058 /* MACTableView.m */,
 			);
 			path = MACTableView;
-			sourceTree = "<group>";
-		};
-		5A5827F21DB4F0B800E00058 /* MACRefresh(刷新) */ = {
-			isa = PBXGroup;
-			children = (
-				5A5827F31DB4F0B800E00058 /* icon_refresh_1@2x.png */,
-				5A5827F41DB4F0B800E00058 /* icon_refresh_1@3x.png */,
-				5A5827F51DB4F0B800E00058 /* icon_refresh_2@2x.png */,
-				5A5827F61DB4F0B800E00058 /* icon_refresh_2@3x.png */,
-				5A5827F71DB4F0B800E00058 /* icon_refresh_3@2x.png */,
-				5A5827F81DB4F0B800E00058 /* icon_refresh_3@3x.png */,
-				5A5827F91DB4F0B800E00058 /* MACRefreshHeader.h */,
-				5A5827FA1DB4F0B800E00058 /* MACRefreshHeader.m */,
-			);
-			path = "MACRefresh(刷新)";
 			sourceTree = "<group>";
 		};
 		A33CD2BE3EBD2F795CA34BAF /* Frameworks */ = {
@@ -246,18 +215,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A5827FD1DB4F0B800E00058 /* icon_refresh_1@2x.png in Resources */,
 				5A5827E71DB4EF3A00E00058 /* Assets.xcassets in Resources */,
-				5A5828021DB4F0B800E00058 /* icon_refresh_3@3x.png in Resources */,
 				5AB468671DB5B01800CB367B /* MainViewController.xib in Resources */,
 				5A7B8A841DB75FEF00C70F6E /* applications.json in Resources */,
 				5AB4686C1DB5B81200CB367B /* MainViewCell.xib in Resources */,
 				5AB468731DB5C5EC00CB367B /* Main.storyboard in Resources */,
-				5A5828011DB4F0B800E00058 /* icon_refresh_3@2x.png in Resources */,
-				5A5827FF1DB4F0B800E00058 /* icon_refresh_2@2x.png in Resources */,
 				5AB468711DB5BADE00CB367B /* DetailViewController.xib in Resources */,
-				5A5827FE1DB4F0B800E00058 /* icon_refresh_1@3x.png in Resources */,
-				5A5828001DB4F0B800E00058 /* icon_refresh_2@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +281,6 @@
 			files = (
 				5A5828041DB4F0B800E00058 /* MACTableView.m in Sources */,
 				5A5827DF1DB4EF3A00E00058 /* AppDelegate.m in Sources */,
-				5A5828031DB4F0B800E00058 /* MACRefreshHeader.m in Sources */,
 				5AB4686B1DB5B81200CB367B /* MainViewCell.m in Sources */,
 				5AB468661DB5B01800CB367B /* MainViewController.m in Sources */,
 				5A7B8A821DB7552600C70F6E /* UIColor+Hexadecimal.m in Sources */,

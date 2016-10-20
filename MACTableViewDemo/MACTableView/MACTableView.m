@@ -7,7 +7,7 @@
 //
 
 #import "MACTableView.h"
-#import "MACRefreshHeader.h"
+#import "MJRefresh.h"
 #import "MJRefreshAutoFooter.h"
 #import "UIScrollView+EmptyDataSet.h"
 
@@ -49,7 +49,7 @@
     return self;
 }
 -(void)initUI{
-    self.tableHeaderView                = [UIView new];
+    //self.tableHeaderView                = [UIView new];
     self.tableFooterView                = [UIView new];
     self.showsHorizontalScrollIndicator = NO;
     self.showsVerticalScrollIndicator   = NO;
@@ -89,7 +89,7 @@
 
         }break;
         case MACCanLoadRefresh:{
-            self.mj_header = [MACRefreshHeader headerWithRefreshingBlock:^{
+            self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
                 [self refreshData];
             }];
             self.mj_header.multipleTouchEnabled = NO;
