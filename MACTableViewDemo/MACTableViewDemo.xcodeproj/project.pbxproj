@@ -16,6 +16,14 @@
 		5A7B8A8A1DB7648500C70F6E /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A891DB7648500C70F6E /* Application.m */; };
 		5A7B8A8D1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7B8A8C1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m */; };
 		5A8217F91DB86A1700DA9011 /* MACTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8217F81DB86A1700DA9011 /* MACTableView.m */; };
+		5A8218221DB8A8A800DA9011 /* MACRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A8218211DB8A8A800DA9011 /* MACRefreshGifHeader.m */; };
+		5A82184C1DB8C3F500DA9011 /* icon_refresh_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8218441DB8C3F500DA9011 /* icon_refresh_1@2x.png */; };
+		5A82184D1DB8C3F500DA9011 /* icon_refresh_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8218451DB8C3F500DA9011 /* icon_refresh_1@3x.png */; };
+		5A82184E1DB8C3F500DA9011 /* icon_refresh_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8218461DB8C3F500DA9011 /* icon_refresh_2@2x.png */; };
+		5A82184F1DB8C3F500DA9011 /* icon_refresh_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8218471DB8C3F500DA9011 /* icon_refresh_2@3x.png */; };
+		5A8218501DB8C3F500DA9011 /* icon_refresh_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8218481DB8C3F500DA9011 /* icon_refresh_3@2x.png */; };
+		5A8218511DB8C3F500DA9011 /* icon_refresh_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A8218491DB8C3F500DA9011 /* icon_refresh_3@3x.png */; };
+		5A8218521DB8C3F500DA9011 /* MACRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A82184B1DB8C3F500DA9011 /* MACRefreshHeader.m */; };
 		5AB468661DB5B01800CB367B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB468641DB5B01800CB367B /* MainViewController.m */; };
 		5AB468671DB5B01800CB367B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AB468651DB5B01800CB367B /* MainViewController.xib */; };
 		5AB4686B1DB5B81200CB367B /* MainViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB468691DB5B81200CB367B /* MainViewCell.m */; };
@@ -45,6 +53,16 @@
 		5A7B8A8C1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonItemTitle.m"; sourceTree = "<group>"; };
 		5A8217F71DB86A1700DA9011 /* MACTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACTableView.h; sourceTree = "<group>"; };
 		5A8217F81DB86A1700DA9011 /* MACTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACTableView.m; sourceTree = "<group>"; };
+		5A8218201DB8A8A800DA9011 /* MACRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACRefreshGifHeader.h; sourceTree = "<group>"; };
+		5A8218211DB8A8A800DA9011 /* MACRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACRefreshGifHeader.m; sourceTree = "<group>"; };
+		5A8218441DB8C3F500DA9011 /* icon_refresh_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_1@2x.png"; sourceTree = "<group>"; };
+		5A8218451DB8C3F500DA9011 /* icon_refresh_1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_1@3x.png"; sourceTree = "<group>"; };
+		5A8218461DB8C3F500DA9011 /* icon_refresh_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_2@2x.png"; sourceTree = "<group>"; };
+		5A8218471DB8C3F500DA9011 /* icon_refresh_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_2@3x.png"; sourceTree = "<group>"; };
+		5A8218481DB8C3F500DA9011 /* icon_refresh_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_3@2x.png"; sourceTree = "<group>"; };
+		5A8218491DB8C3F500DA9011 /* icon_refresh_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_refresh_3@3x.png"; sourceTree = "<group>"; };
+		5A82184A1DB8C3F500DA9011 /* MACRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACRefreshHeader.h; sourceTree = "<group>"; };
+		5A82184B1DB8C3F500DA9011 /* MACRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACRefreshHeader.m; sourceTree = "<group>"; };
 		5AB468631DB5B01800CB367B /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		5AB468641DB5B01800CB367B /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		5AB468651DB5B01800CB367B /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -103,6 +121,7 @@
 		5A5827D91DB4EF3A00E00058 /* MACTableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5A8218431DB8C3F500DA9011 /* MACRefresh */,
 				5A5827DD1DB4EF3A00E00058 /* AppDelegate.h */,
 				5A5827DE1DB4EF3A00E00058 /* AppDelegate.m */,
 				5AB468631DB5B01800CB367B /* MainViewController.h */,
@@ -143,9 +162,26 @@
 			children = (
 				5A8217F71DB86A1700DA9011 /* MACTableView.h */,
 				5A8217F81DB86A1700DA9011 /* MACTableView.m */,
+				5A8218201DB8A8A800DA9011 /* MACRefreshGifHeader.h */,
+				5A8218211DB8A8A800DA9011 /* MACRefreshGifHeader.m */,
 			);
 			name = MACTableView;
 			path = ../MACTableView;
+			sourceTree = "<group>";
+		};
+		5A8218431DB8C3F500DA9011 /* MACRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				5A8218441DB8C3F500DA9011 /* icon_refresh_1@2x.png */,
+				5A8218451DB8C3F500DA9011 /* icon_refresh_1@3x.png */,
+				5A8218461DB8C3F500DA9011 /* icon_refresh_2@2x.png */,
+				5A8218471DB8C3F500DA9011 /* icon_refresh_2@3x.png */,
+				5A8218481DB8C3F500DA9011 /* icon_refresh_3@2x.png */,
+				5A8218491DB8C3F500DA9011 /* icon_refresh_3@3x.png */,
+				5A82184A1DB8C3F500DA9011 /* MACRefreshHeader.h */,
+				5A82184B1DB8C3F500DA9011 /* MACRefreshHeader.m */,
+			);
+			path = MACRefresh;
 			sourceTree = "<group>";
 		};
 		A33CD2BE3EBD2F795CA34BAF /* Frameworks */ = {
@@ -216,10 +252,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8218511DB8C3F500DA9011 /* icon_refresh_3@3x.png in Resources */,
 				5A5827E71DB4EF3A00E00058 /* Assets.xcassets in Resources */,
 				5AB468671DB5B01800CB367B /* MainViewController.xib in Resources */,
+				5A8218501DB8C3F500DA9011 /* icon_refresh_3@2x.png in Resources */,
+				5A82184D1DB8C3F500DA9011 /* icon_refresh_1@3x.png in Resources */,
+				5A82184F1DB8C3F500DA9011 /* icon_refresh_2@3x.png in Resources */,
 				5A7B8A841DB75FEF00C70F6E /* applications.json in Resources */,
+				5A82184E1DB8C3F500DA9011 /* icon_refresh_2@2x.png in Resources */,
 				5AB4686C1DB5B81200CB367B /* MainViewCell.xib in Resources */,
+				5A82184C1DB8C3F500DA9011 /* icon_refresh_1@2x.png in Resources */,
 				5AB468731DB5C5EC00CB367B /* Main.storyboard in Resources */,
 				5AB468711DB5BADE00CB367B /* DetailViewController.xib in Resources */,
 			);
@@ -280,11 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8218221DB8A8A800DA9011 /* MACRefreshGifHeader.m in Sources */,
 				5A5827DF1DB4EF3A00E00058 /* AppDelegate.m in Sources */,
 				5A8217F91DB86A1700DA9011 /* MACTableView.m in Sources */,
 				5AB4686B1DB5B81200CB367B /* MainViewCell.m in Sources */,
 				5AB468661DB5B01800CB367B /* MainViewController.m in Sources */,
 				5A7B8A821DB7552600C70F6E /* UIColor+Hexadecimal.m in Sources */,
+				5A8218521DB8C3F500DA9011 /* MACRefreshHeader.m in Sources */,
 				5A5827DC1DB4EF3A00E00058 /* main.m in Sources */,
 				5AB468701DB5BADE00CB367B /* DetailViewController.m in Sources */,
 				5A7B8A8D1DB7680800C70F6E /* UIViewController+BackButtonItemTitle.m in Sources */,

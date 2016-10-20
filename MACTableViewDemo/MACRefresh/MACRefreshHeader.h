@@ -7,7 +7,7 @@
 //
 
 #import <MJRefresh/MJRefresh.h>
-
-@interface MACRefreshHeader : MJRefreshGifHeader
+#import "MACRefreshGifHeader.h"
+@interface MACRefreshHeader : MACRefreshGifHeader
 
 @end

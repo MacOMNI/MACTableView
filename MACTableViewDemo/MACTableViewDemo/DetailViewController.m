@@ -68,7 +68,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"cell %ld",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %ld",_dataArr[indexPath.row],indexPath.row];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

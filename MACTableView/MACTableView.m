@@ -11,9 +11,11 @@
 #import "MJRefresh.h"
 #import "MJRefreshAutoFooter.h"
 #import "UIScrollView+EmptyDataSet.h"
+#import "MACRefreshGifHeader.h"
 
-
-@interface MACTableView()<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@interface MACTableView()<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>{
+    
+}
 
 /**  当前访问的page 下标*/
 @property (nonatomic,assign) NSInteger page;
@@ -56,8 +58,8 @@
     self.showsVerticalScrollIndicator   = NO;
     
     self.macCanLoadState                = MACCanLoadAll;
-    self.emptyTitle                     = @"咋没数据呢,刷新试试~~";
-    self.emptySubtitle                  = @"您的数据被程序猿搬走咯~~";
+    self.emptyTitle                     = @"";
+    self.emptySubtitle                  = @"";
     self.emptyAtrtibutedTitle           = nil;
     self.emptyAtrtibutedSubtitle        = nil;
     self.emptyImage                     = nil;
@@ -78,22 +80,11 @@
     _macCanLoadState = macCanLoadState;
     switch (_macCanLoadState) {
         case MACCanLoadAll:{
-            self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-                [self  refreshData];
-            }];
-            self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-                [self pullData];
-            }];
-            self.mj_header.multipleTouchEnabled = NO;
-            self.mj_footer.multipleTouchEnabled = NO;
-            self.mj_footer.hidden = YES;
-            
+            [self setRefreshHeader];
+            [self setRefreshFooter];
         }break;
         case MACCanLoadRefresh:{
-            self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-                [self refreshData];
-            }];
-            self.mj_header.multipleTouchEnabled = NO;
+            [self setRefreshHeader];
             self.mj_footer = nil;
         }break;
         case MACCanLoadNone:{
@@ -105,9 +96,10 @@
 -(void)beginLoading{
     //[self.mj_header beginRefreshing];
     [self.mj_header beginRefreshingWithCompletionBlock:^{
-        self.emptyDataSetDelegate = self;
-        self.emptyDataSetSource   = self;
-        
+        if (_showEmpty) {
+            self.emptyDataSetDelegate = self;
+            self.emptyDataSetSource   = self;
+        }
     }];
 }
 -(void)endLoading{
@@ -129,7 +121,26 @@
     return [NSNumber numberWithInteger:++self.page];
 }
 #pragma mark private methods
+-(void)setRefreshHeader{//设置
+    if (className) {
+       MJRefreshGifHeader  *gifHeaer = [[NSClassFromString(className) alloc] init];
+        [gifHeaer setRefreshingTarget:self refreshingAction:@selector(refreshData)];
+        self.mj_header = gifHeaer;
+    }else{
+        self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [self  refreshData];
+        }];
+    }
+    self.mj_header.multipleTouchEnabled = NO;
 
+}
+-(void)setRefreshFooter{
+    self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self pullData];
+    }];
+    self.mj_footer.multipleTouchEnabled = NO;
+    self.mj_footer.hidden = YES;
+}
 -(BOOL)isEmptyTableView{//判断当前tableView是否为空
     id<UITableViewDataSource> src = self.dataSource;
     NSInteger sections = 1;
