@@ -3,9 +3,9 @@
 
 对 UITableView 空白页文字提示、空白页图片、上拉下拉事件等进行了高度封装，使用简单高效，并命名为MACTableView, 欢迎star & issue
 
-![GIF 1](https://github.com/azheng51714/MACTableView/blob/master/Photos/fvyO81OO7L.gif);
-![GIF 2](https://github.com/azheng51714/MACTableView/blob/master/Photos/hmD0r7fU0J.gif);
-![GIF 3](https://github.com/azheng51714/MACTableView/blob/master/Photos/MACTableView.png);
+![GIF 1](https://github.com/azheng51714/MACTableView/blob/master/Photos/fvyO81OO7L.gif)
+![GIF 2](https://github.com/azheng51714/MACTableView/blob/master/Photos/hmD0r7fU0J.gif)
+![GIF 3](https://github.com/azheng51714/MACTableView/blob/master/Photos/MACTableView.png)
 ### Features
 * 支持 多种多种空白样式：包括是否显示主标题、副标题、空白图以及是否支持上拉下拉代理事件等；
 * 基于 MJRefresh & DZNEmptyDataSet 集成设计；
@@ -59,15 +59,41 @@
 ```objc
 #pragma mark MACTableViewDelegate
 -(void)loadDataRefreshOrPull:(MACRefreshState)state{
-   if(state == MACRefreshing){
+   if(state == MACRefreshing){//下拉刷新
      //do something
-   }else {
+   }else {//加载更多
      // do other thing
    }
   //异步(网络访问)请求后执行 [self.tableView endLoading] 结束刷新
 }
 
 ```
+* Additional Remark 对于有自定义 RefreshHeader 需求的，新建一个继承自 MACRefreshGifHeader 的类，设置相关属性，重写 load 方法即可
+  
+```objc
+-(void)prepare{
+    [super prepare];
+    
+    // 设置普通状态的动画图片
+    [self setImages:idleImages forState:MJRefreshStateIdle];
+    
+    // 设置即将刷新状态的动画图片（一松开就会刷新的状态）
+    [self setImages:refreshingImages forState:MJRefreshStatePulling];
+    
+    // 设置正在刷新状态的动画图片
+    [self setImages:refreshingImages forState:MJRefreshStateRefreshing];
+    // 隐藏时间
+    //self.lastUpdatedTimeLabel.hidden = YES;
+    // 隐藏刷新状态
+    //self.stateLabel.hidden = YES;
+}
+
++ (void)load{
+    NSLog(@"----------重写 load 方法， 注册 MACRefreshGifHeader,即可实现自定义RefreshHeader,无需其他操作----------------");
+    [super registerMACRefresh];
+}
+```
+
 
 ### MACTableView
 

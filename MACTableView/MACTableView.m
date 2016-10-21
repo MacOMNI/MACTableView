@@ -2,7 +2,7 @@
 //  MACTableView.m
 //  MACTableView
 //  https://github.com/azheng51714/MACTableView
-//  Created by MacKun on 16/3/1.
+//  Created by MacKun on 16/10/21.
 //  Copyright © 2016年 MacKun All rights reserved.
 //
 
@@ -121,7 +121,7 @@
     return [NSNumber numberWithInteger:++self.page];
 }
 #pragma mark private methods
--(void)setRefreshHeader{//设置
+-(void)setRefreshHeader{//设置RefreshHeader
     if (className) {
        MJRefreshGifHeader  *gifHeaer = [[NSClassFromString(className) alloc] init];
         [gifHeaer setRefreshingTarget:self refreshingAction:@selector(refreshData)];
@@ -132,9 +132,8 @@
         }];
     }
     self.mj_header.multipleTouchEnabled = NO;
-
 }
--(void)setRefreshFooter{
+-(void)setRefreshFooter{//设置RefreshFooter
     self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [self pullData];
     }];
