@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MACTableView'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'The blank of UITableView supports empty text、empty picture、pull up & down events'
   s.homepage         = 'https://github.com/azheng51714/MACTableView'
   s.license          = 'MIT'
