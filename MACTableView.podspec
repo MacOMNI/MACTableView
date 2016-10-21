@@ -7,7 +7,6 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { 'MacKun' => '414294494@qq.com' }
   s.source           = { :git => 'https://github.com/azheng51714/MACTableView.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/MaximeEpain'
 
   s.platform     = :ios, '6.0'
   s.requires_arc = true
