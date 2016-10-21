@@ -17,7 +17,7 @@
 
 ### cocoapods
 ```ruby
- pod 'MACTableView', '~> 1.0.0'
+ pod 'MACTableView', '~> 1.1.0'
 ```
 
 ### Import
