@@ -93,7 +93,8 @@
     [super registerMACRefresh];
 }
 ```
-
+![GIF 4](https://github.com/azheng51714/MACTableView/blob/master/Photos/kF4saP4ilk.gif)
+![GIF 5](https://github.com/azheng51714/MACTableView/blob/master/Photos/zUsnur8eFq.gif)
 
 ### MACTableView
 
