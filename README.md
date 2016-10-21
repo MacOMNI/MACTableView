@@ -89,7 +89,7 @@
 }
 
 + (void)load{
-    NSLog(@"----------重写 load 方法， 注册 MACRefreshGifHeader,即可实现自定义RefreshHeader,无需其他操作----------------");
+    NSLog(@"重写 load 方法， 注册 MACRefreshGifHeader,即可实现自定义RefreshHeader,无需其他操作");
     [super registerMACRefresh];
 }
 ```
