@@ -12,6 +12,7 @@
 * 支持 Storyboard & Xib;
 * 支持 iOS 6 及以上;
 * 支持 iPhone & iPad.
+* [swift 版本](https://github.com/azheng51714/MACTableView-Swift)
 
 ## Installation
 
