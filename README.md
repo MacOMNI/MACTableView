@@ -1,4 +1,6 @@
 # MACTableView
+* [swift 版本](https://github.com/azheng51714/MACTableView-Swift)
+
 ##Projects using this library
 
 对 UITableView 空白页文字提示、空白页图片、上拉下拉事件等进行了高度封装，使用简单高效，并命名为MACTableView, 欢迎star & issue
@@ -12,7 +14,7 @@
 * 支持 Storyboard & Xib;
 * 支持 iOS 6 及以上;
 * 支持 iPhone & iPad.
-* [swift 版本](https://github.com/azheng51714/MACTableView-Swift)
+
 
 ## Installation
 
