@@ -1,5 +1,5 @@
 # MACTableView
-* [swift 版本](https://github.com/azheng51714/MACTableView-Swift)
+* [Swift 版本](https://github.com/azheng51714/MACTableView-Swift)
 
 ##Projects using this library
 
